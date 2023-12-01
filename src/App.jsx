@@ -1,9 +1,10 @@
-import "./App.css";
+import TopNav from "./components/Layout/TopNav";
+import Card from "./components/UI/Card";
 
 function App() {
   return (
     <>
-      <h1 className="text-xl font-bold underline">Hello world!</h1>
+      <TopNav />
     </>
   );
 }
