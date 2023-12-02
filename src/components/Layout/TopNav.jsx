@@ -29,7 +29,7 @@ function TopNav() {
       <div className="flex items-center gap-4">
         <IconCart />
         <div className="w-8 h-8 ">
-          <img src={imgAvatar} />
+          <img src={imgAvatar} alt="Avatar" />
         </div>
       </div>
     </nav>
