@@ -2,9 +2,11 @@ import IconCart from "../Icons/IconCart";
 import IconLogo from "../Icons/IconLogo";
 import imgAvatar from "../../assets/images/image-avatar.png";
 
+import Cart from "../Cart/Cart";
+
 function TopNav() {
   return (
-    <nav className="flex justify-between px-3 py-6 border-b border-grayish-blue">
+    <nav className="relative flex justify-between px-3 py-6 border-b border-grayish-blue">
       <ul className="flex gap-8 text-dark-grayish-blue">
         <li className="mr-4 ">
           <IconLogo />
@@ -32,6 +34,8 @@ function TopNav() {
           <img src={imgAvatar} alt="Avatar" />
         </div>
       </div>
+
+      <Cart />
     </nav>
   );
 }
