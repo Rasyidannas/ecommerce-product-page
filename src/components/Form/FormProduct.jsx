@@ -1,36 +1,57 @@
-import Input from "../UI/Input";
-import Button from "../UI/Button";
 import IconCart from "../Icons/IconCart";
 import IconPlus from "../Icons/IconPlus";
 import IconMinus from "../Icons/IconMinus";
 
+import Input from "../UI/Input";
+import Button from "../UI/Button";
+
+import { useState } from "react";
+
 function FormProduct() {
+  const [amount, setAmount] = useState(0);
+
+  //button plus handler
+  const plusAmountHandler = () => {
+    setAmount((prevState) => prevState + 1);
+  };
+
+  //button minus hanlder
+  const minusAmountHandler = () => {
+    if (amount > 0) setAmount((prevState) => prevState - 1);
+  };
+
+  console.log(amount);
+
   return (
     <>
       <form className="flex gap-4">
         <div className="flex">
           <Button
             type="button"
-            className="w-12 h-12 text-orange bg-light-grayish-blue rounded-e flex justify-center items-center"
+            className="flex items-center justify-center w-12 h-12 text-orange bg-light-grayish-blue rounded-e"
+            onClick={minusAmountHandler}
           >
             <IconMinus />
           </Button>
           <Input
             className="product-form"
             input={{
+              value: amount,
               type: "text",
-              defaultValue: 0,
+              readOnly: true,
+              disabled: true,
             }}
           />
           <Button
             type="button"
-            className="w-12 h-12 text-orange bg-light-grayish-blue rounded-e flex justify-center items-center"
+            className="flex items-center justify-center w-12 h-12 text-orange bg-light-grayish-blue rounded-e"
+            onClick={plusAmountHandler}
           >
             <IconPlus />
           </Button>
         </div>
 
-        <Button className="btn-primary flex-1">
+        <Button className="flex-1 btn-primary">
           <IconCart />
           Add to cart
         </Button>
