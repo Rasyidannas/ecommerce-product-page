@@ -15,6 +15,7 @@ import imgProductThumb4 from "./assets/images/image-product-4-thumbnail.jpg";
 
 //data item shoes
 const itemShoes = {
+  id: 1,
   title: "Fall Limited Edition Senakers",
   company: "sneaker company",
   description:
@@ -41,10 +42,10 @@ function App() {
         <section>
           <Card className="flex gap-24">
             <div className="flex flex-col flex-none w-2/5 gap-4">
-              <ProductImages />
+              <ProductImages bigImg={itemShoes.images.bigImg} thumbImg={itemShoes.images.thumbImg} />
             </div>
             <div className="flex flex-col gap-8">
-              <ProductDescription />
+              <ProductDescription id={itemShoes.id} title={itemShoes.title} company={itemShoes.company} description={itemShoes.description} price={itemShoes.price} discount={itemShoes.discount} />
             </div>
           </Card>
         </section>

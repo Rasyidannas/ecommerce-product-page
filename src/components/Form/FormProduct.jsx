@@ -7,7 +7,7 @@ import Button from "../UI/Button";
 
 import { useState } from "react";
 
-function FormProduct() {
+function FormProduct(props) {
   const [amount, setAmount] = useState(0);
 
   //button plus handler
@@ -20,15 +20,22 @@ function FormProduct() {
     if (amount > 0) setAmount((prevState) => prevState - 1);
   };
 
-  console.log(amount);
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    if(amount > 0) {
+      //store data in parent props
+      props.onAddToCart(amount);
+    }
+  }
 
   return (
     <>
-      <form className="flex gap-4">
+      <form className="flex gap-4" onSubmit={submitHandler} >
         <div className="flex">
           <Button
             type="button"
-            className="flex items-center justify-center w-12 h-12 text-orange bg-light-grayish-blue rounded-e"
+            className="flex items-center justify-center w-12 h-12 text-orange bg-light-grayish-blue rounded-s"
             onClick={minusAmountHandler}
           >
             <IconMinus />

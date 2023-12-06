@@ -1,15 +1,7 @@
-import imgProduct1 from "../../assets/images/image-product-1.jpg";
-import imgProduct2 from "../../assets/images/image-product-2.jpg";
-import imgProduct3 from "../../assets/images/image-product-3.jpg";
-import imgProduct4 from "../../assets/images/image-product-4.jpg";
-import imgProductThumb1 from "../../assets/images/image-product-1-thumbnail.jpg";
-import imgProductThumb2 from "../../assets/images/image-product-2-thumbnail.jpg";
-import imgProductThumb3 from "../../assets/images/image-product-3-thumbnail.jpg";
-import imgProductThumb4 from "../../assets/images/image-product-4-thumbnail.jpg";
 import { useState } from "react";
 
-function ProductImages() {
-  const [showProduct, setShowProduct] = useState(imgProduct1);
+function ProductImages({ bigImg, thumbImg }) {
+  const [showProduct, setShowProduct] = useState(bigImg[0]);
 
   //handler show product
   const showProductHandler = (value) => {
@@ -25,27 +17,27 @@ function ProductImages() {
       <ul className="flex gap-4">
         <li
           className="overflow-hidden rounded-md "
-          onClick={showProductHandler.bind(null, imgProduct1)}
+          onClick={showProductHandler.bind(null, bigImg[0])}
         >
-          <img src={imgProductThumb1} alt="Product 1" />
+          <img src={thumbImg[0]} alt="Product 1" />
         </li>
         <li
           className="overflow-hidden rounded-md "
-          onClick={showProductHandler.bind(null, imgProduct2)}
+          onClick={showProductHandler.bind(null, bigImg[1])}
         >
-          <img src={imgProductThumb2} alt="Product 2" />
+          <img src={thumbImg[1]} alt="Product 2" />
         </li>
         <li
           className="overflow-hidden rounded-md "
-          onClick={showProductHandler.bind(null, imgProduct3)}
+          onClick={showProductHandler.bind(null, bigImg[2])}
         >
-          <img src={imgProductThumb3} alt="Product 3" />
+          <img src={thumbImg[2]} alt="Product 3" />
         </li>
         <li
           className="overflow-hidden rounded-md "
-          onClick={showProductHandler.bind(null, imgProduct4)}
+          onClick={showProductHandler.bind(null, bigImg[3])}
         >
-          <img src={imgProductThumb4} alt="Product 4" />
+          <img src={thumbImg[3]} alt="Product 4" />
         </li>
       </ul>
     </>
