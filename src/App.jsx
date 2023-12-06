@@ -42,10 +42,20 @@ function App() {
         <section>
           <Card className="flex gap-24">
             <div className="flex flex-col flex-none w-2/5 gap-4">
-              <ProductImages bigImg={itemShoes.images.bigImg} thumbImg={itemShoes.images.thumbImg} />
+              <ProductImages
+                bigImg={itemShoes.images.bigImg}
+                thumbImg={itemShoes.images.thumbImg}
+              />
             </div>
             <div className="flex flex-col gap-8">
-              <ProductDescription id={itemShoes.id} title={itemShoes.title} company={itemShoes.company} description={itemShoes.description} price={itemShoes.price} discount={itemShoes.discount} />
+              <ProductDescription
+                id={itemShoes.id}
+                title={itemShoes.title}
+                company={itemShoes.company}
+                description={itemShoes.description}
+                price={itemShoes.price}
+                discount={itemShoes.discount}
+              />
             </div>
           </Card>
         </section>
