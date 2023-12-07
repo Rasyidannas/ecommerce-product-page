@@ -18,7 +18,7 @@ function Cart() {
         </p>
       )}
 
-      {cartItems.length > 0 && <div>item added!</div>}
+      {cartItems.length > 0 && <div><img src="/assets/images/image-product-1-thumbnail.jpg" /></div>}
     </div>
   );
 }
