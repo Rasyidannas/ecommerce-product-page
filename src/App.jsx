@@ -4,15 +4,6 @@ import ProductImages from "./components/Product/ProductImages";
 import ProductDescription from "./components/Product/ProductDescription";
 import CartProvider from "./store/CartProvider";
 
-import imgProduct1 from "./assets/images/image-product-1.jpg";
-import imgProduct2 from "./assets/images/image-product-2.jpg";
-import imgProduct3 from "./assets/images/image-product-3.jpg";
-import imgProduct4 from "./assets/images/image-product-4.jpg";
-import imgProductThumb1 from "./assets/images/image-product-1-thumbnail.jpg";
-import imgProductThumb2 from "./assets/images/image-product-2-thumbnail.jpg";
-import imgProductThumb3 from "./assets/images/image-product-3-thumbnail.jpg";
-import imgProductThumb4 from "./assets/images/image-product-4-thumbnail.jpg";
-
 //data item shoes
 const itemShoes = {
   id: 1,
@@ -23,12 +14,17 @@ const itemShoes = {
   price: 250,
   discount: 50,
   images: {
-    bigImg: [imgProduct1, imgProduct2, imgProduct3, imgProduct4],
+    bigImg: [
+      "/assets/images/image-product-1.jpg",
+      "/assets/images/image-product-2.jpg",
+      "/assets/images/image-product-3.jpg",
+      "/assets/images/image-product-4.jpg",
+    ],
     thumbImg: [
-      imgProductThumb1,
-      imgProductThumb2,
-      imgProductThumb3,
-      imgProductThumb4,
+      "/assets/images/image-product-1-thumbnail.jpg",
+      "/assets/images/image-product-2-thumbnail.jpg",
+      "/assets/images/image-product-3-thumbnail.jpg",
+      "/assets/images/image-product-4-thumbnail.jpg",
     ],
   },
 };
@@ -55,6 +51,7 @@ function App() {
                 description={itemShoes.description}
                 price={itemShoes.price}
                 discount={itemShoes.discount}
+                thumbImage={itemShoes.images.thumbImg[0]}
               />
             </div>
           </Card>

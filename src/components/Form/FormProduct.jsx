@@ -23,15 +23,15 @@ function FormProduct(props) {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    if(amount > 0) {
+    if (amount > 0) {
       //store data in parent props
       props.onAddToCart(amount);
     }
-  }
+  };
 
   return (
     <>
-      <form className="flex gap-4" onSubmit={submitHandler} >
+      <form className="flex gap-4" onSubmit={submitHandler}>
         <div className="flex">
           <Button
             type="button"
