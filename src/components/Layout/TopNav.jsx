@@ -13,7 +13,7 @@ function TopNav() {
   // console.log(item);
 
   return (
-    <nav className="relative flex justify-between px-3 py-6 border-b border-grayish-blue">
+    <nav className="relative flex items-center justify-between px-3 py-4 border-b border-grayish-blue">
       <ul className="flex gap-8 text-dark-grayish-blue">
         <li className="mr-4 ">
           <IconLogo />
@@ -35,10 +35,10 @@ function TopNav() {
         </li>
       </ul>
 
-      <div className="flex items-center gap-4">
-        <div className="relative">
+      <div className="relative flex items-center gap-4">
+        <div className="relative p-4 icon-cart peer">
           {item && (
-            <span className="absolute py-1 px-2 rounded-xl text-[.5rem] font-bold -top-1/2 -right-1/4 text-white bg-orange">
+            <span className="absolute py-1 px-2 rounded-xl text-[.5rem] font-bold top-0 right-0 text-white bg-orange">
               {item.amount}
             </span>
           )}
@@ -47,9 +47,9 @@ function TopNav() {
         <div className="w-8 h-8 ">
           <img src={imgAvatar} alt="Avatar" />
         </div>
-      </div>
 
-      <Cart />
+        <Cart className="hidden peer-hover:block hover:block" />
+      </div>
     </nav>
   );
 }

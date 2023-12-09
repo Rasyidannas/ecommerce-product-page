@@ -24,7 +24,7 @@ function ProductDescription({
       id,
       title,
       amount,
-      price,
+      price: currPrice,
       discount,
       thumbImage,
     });

@@ -3,14 +3,21 @@ import CartContext from "../../store/cart-context";
 import Button from "../UI/Button";
 import IconDelete from "../Icons/IconDelete";
 
-function Cart() {
+function Cart({ className }) {
   const cartCtx = useContext(CartContext);
 
   const cartItems = cartCtx.items;
   const cartTotalAmount = cartCtx.totalAmount;
 
+  //remove item handler
+  const removeItemCart = () => {
+    cartCtx.removeItem();
+  };
+
   return (
-    <div className="absolute w-[375px] right-2 top-full bg-white shadow-md rounded-md">
+    <div
+      className={`absolute w-[375px] right-2 top-full bg-white shadow-md rounded-md ${className}`}
+    >
       <h4 className="px-6 py-4 font-bold border-b border-grayish-blue">Cart</h4>
 
       {cartItems.length < 1 && (
@@ -35,9 +42,9 @@ function Cart() {
                 </span>
               </p>
             </div>
-            <div className="text-grayish-blue">
+            <Button className="text-grayish-blue" onClick={removeItemCart}>
               <IconDelete />
-            </div>
+            </Button>
           </div>
           <Button className="flex-1 btn-primary">Checkout</Button>
         </div>

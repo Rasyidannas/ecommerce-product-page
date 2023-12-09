@@ -26,6 +26,7 @@ function FormProduct(props) {
     if (amount > 0) {
       //store data in parent props
       props.onAddToCart(amount);
+      setAmount(0);
     }
   };
 
