@@ -13,30 +13,30 @@ function TopNav() {
   // console.log(item);
 
   return (
-    <nav className="relative flex items-center justify-between px-3 py-4 border-b border-grayish-blue">
-      <ul className="flex gap-8 text-dark-grayish-blue">
+    <nav className="relative flex items-center justify-between px-3 border-b border-grayish-blue">
+      <ul className="flex items-center gap-8 text-dark-grayish-blue">
         <li className="mr-4 ">
           <IconLogo />
         </li>
-        <li>
+        <li className="nav-link">
           <a href="#">Collections</a>
         </li>
-        <li>
+        <li className="nav-link">
           <a href="#">Men</a>
         </li>
-        <li>
+        <li className="nav-link">
           <a href="#">Women</a>
         </li>
-        <li>
+        <li className="nav-link">
           <a href="#">About</a>
         </li>
-        <li>
+        <li className="nav-link">
           <a href="#">Contact</a>
         </li>
       </ul>
 
       <div className="relative flex items-center gap-4">
-        <div className="relative p-4 icon-cart peer">
+        <div className="relative p-4 icon-cart peer cursor-pointer text-dark-grayish-blue hover:text-black">
           {item && (
             <span className="absolute py-1 px-2 rounded-xl text-[.5rem] font-bold top-0 right-0 text-white bg-orange">
               {item.amount}
@@ -44,7 +44,7 @@ function TopNav() {
           )}
           <IconCart />
         </div>
-        <div className="w-8 h-8 ">
+        <div className="w-8 h-8 border-2 border-white hover:border-orange cursor-pointer rounded-2xl ">
           <img src={imgAvatar} alt="Avatar" />
         </div>
 

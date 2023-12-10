@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function ProductImages({ bigImg, thumbImg }) {
-  const [showProduct, setShowProduct] = useState(bigImg[0]);
+  const [showProduct, setShowProduct] = useState(0);
 
   //handler show product
   const showProductHandler = (value) => {
@@ -9,35 +9,71 @@ function ProductImages({ bigImg, thumbImg }) {
     console.log(showProduct);
   };
 
+  //style for thumbnail
+  const activeThumbBox = "border-2 border-orange";
+  const activeThumbImg = "opacity-50";
+
   return (
     <>
       <div className="w-full overflow-hidden rounded-xl">
-        <img src={showProduct} />
+        <img src={bigImg[showProduct]} />
       </div>
       <ul className="flex gap-4">
         <li
-          className="overflow-hidden rounded-md "
-          onClick={showProductHandler.bind(null, bigImg[0])}
+          className={`overflow-hidden rounded-md ${
+            showProduct === 0 && activeThumbBox
+          }`}
+          onClick={showProductHandler.bind(null, 0)}
         >
-          <img src={thumbImg[0]} alt="Product 1" />
+          <img
+            src={thumbImg[0]}
+            alt="Product 1"
+            className={`object-cover h-full + ${
+              showProduct === 0 && activeThumbImg
+            } hover:opacity-70`}
+          />
         </li>
         <li
-          className="overflow-hidden rounded-md "
-          onClick={showProductHandler.bind(null, bigImg[1])}
+          className={`overflow-hidden rounded-md ${
+            showProduct === 1 && activeThumbBox
+          }`}
+          onClick={showProductHandler.bind(null, 1)}
         >
-          <img src={thumbImg[1]} alt="Product 2" />
+          <img
+            src={thumbImg[1]}
+            alt="Product 2"
+            className={`object-cover h-full + ${
+              showProduct === 1 && activeThumbImg
+            } hover:opacity-70`}
+          />
         </li>
         <li
-          className="overflow-hidden rounded-md "
-          onClick={showProductHandler.bind(null, bigImg[2])}
+          className={`overflow-hidden rounded-md ${
+            showProduct === 2 && activeThumbBox
+          }`}
+          onClick={showProductHandler.bind(null, 2)}
         >
-          <img src={thumbImg[2]} alt="Product 3" />
+          <img
+            src={thumbImg[2]}
+            alt="Product 3"
+            className={`object-cover h-full + ${
+              showProduct === 2 && activeThumbImg
+            } hover:opacity-70`}
+          />
         </li>
         <li
-          className="overflow-hidden rounded-md "
-          onClick={showProductHandler.bind(null, bigImg[3])}
+          className={`overflow-hidden rounded-md ${
+            showProduct === 3 && activeThumbBox
+          }`}
+          onClick={showProductHandler.bind(null, 3)}
         >
-          <img src={thumbImg[3]} alt="Product 4" />
+          <img
+            src={thumbImg[3]}
+            alt="Product 4"
+            className={`object-cover h-full + ${
+              showProduct === 3 && activeThumbImg
+            } hover:opacity-70`}
+          />
         </li>
       </ul>
     </>

@@ -59,7 +59,7 @@ function FormProduct(props) {
           </Button>
         </div>
 
-        <Button className="flex-1 btn-primary">
+        <Button className="flex-1 btn-primary hover:shadow-xl hover:shadow-orange/50">
           <IconCart />
           Add to cart
         </Button>

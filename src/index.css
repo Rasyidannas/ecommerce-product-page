@@ -18,4 +18,8 @@
   .btn-primary {
     @apply flex items-center justify-center gap-2 px-6 py-2 text-sm font-bold text-white rounded bg-orange;
   }
+
+  .nav-link {
+    @apply border-b-2 border-white hover:border-orange py-4;
+  }
 }
