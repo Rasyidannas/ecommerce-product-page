@@ -16,7 +16,7 @@ function Cart({ className }) {
 
   return (
     <div
-      className={`absolute w-[375px] right-2 top-full bg-white shadow-md rounded-md ${className}`}
+      className={`absolute w-[327px] right-2 top-full bg-white shadow-md rounded-md ${className}`}
     >
       <h4 className="px-6 py-4 font-bold border-b border-grayish-blue">Cart</h4>
 

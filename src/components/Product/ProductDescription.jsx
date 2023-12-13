@@ -44,7 +44,7 @@ function ProductDescription({
 
       <p className="text-dark-grayish-blue">{description}</p>
 
-      <div>
+      <div className="flex sm:flex-col flex-row justify-between">
         <div className="flex gap-4">
           <h2 className="text-2xl font-bold">${currPrice.toFixed(2)}</h2>
           <div className="self-center px-2 py-1 text-sm font-bold rounded bg-pale-orange text-orange">

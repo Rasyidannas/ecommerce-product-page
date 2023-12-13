@@ -8,6 +8,10 @@
     /* 1rem = 16px */
     font-size: 100%;
   }
+
+  body {
+    @apply relative;
+  }
 }
 
 @layer components {

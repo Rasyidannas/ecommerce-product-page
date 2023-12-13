@@ -32,7 +32,10 @@ function FormProduct(props) {
 
   return (
     <>
-      <form className="flex gap-4" onSubmit={submitHandler}>
+      <form
+        className="flex sm:flex-row flex-col gap-4"
+        onSubmit={submitHandler}
+      >
         <div className="flex">
           <Button
             type="button"
@@ -42,7 +45,7 @@ function FormProduct(props) {
             <IconMinus />
           </Button>
           <Input
-            className="product-form"
+            className="product-form w-full sm:w-auto bg-light-grayish-blue text-center"
             input={{
               value: amount,
               type: "text",

@@ -1,8 +1,13 @@
+import { useState } from "react";
+
 import Card from "./components/UI/Card";
 import TopNav from "./components/Layout/TopNav";
 import ProductImages from "./components/Product/ProductImages";
 import ProductDescription from "./components/Product/ProductDescription";
 import CartProvider from "./store/CartProvider";
+import ProductModal from "./components/Modal/ProductModal";
+import MobileMenu from "./components/Layout/MobileMenu";
+import MobileProductImages from "./components/Product/MobileProductImages";
 
 //data item shoes
 const itemShoes = {
@@ -30,19 +35,43 @@ const itemShoes = {
 };
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const modalHandler = (val) => {
+    setShowModal(val);
+  };
+
+  const menuMobileHandler = (val) => {
+    setShowMenu(val);
+  };
+
   return (
     <CartProvider>
-      <TopNav />
+      <TopNav onMobileMenu={menuMobileHandler} />
+
+      {/* Mobile side menu */}
+      {showMenu && (
+        <div className="md:hidden block">
+          <MobileMenu onCloseModal={menuMobileHandler} />
+        </div>
+      )}
 
       <main className="px-16 py-24">
         <section>
-          <Card className="flex gap-24">
-            <div className="flex flex-col flex-none w-2/5 gap-4">
+          <Card className="flex md:flex-row flex-col gap-24">
+            {/* Product Image Desktop */}
+            <div className="hidden md:flex flex-col flex-none w-full md:w-2/5 gap-4">
               <ProductImages
                 bigImg={itemShoes.images.bigImg}
                 thumbImg={itemShoes.images.thumbImg}
+                onCloseModal={modalHandler}
               />
             </div>
+
+            {/* Product Image Mobile */}
+            <MobileProductImages bigImg={itemShoes.images.bigImg} />
+
             <div className="flex flex-col gap-8">
               <ProductDescription
                 id={itemShoes.id}
@@ -57,6 +86,14 @@ function App() {
           </Card>
         </section>
       </main>
+      {showModal && (
+        <ProductModal
+          bigImg={itemShoes.images.bigImg}
+          thumbImg={itemShoes.images.thumbImg}
+          onCloseModal={modalHandler}
+          className=""
+        />
+      )}
     </CartProvider>
   );
 }

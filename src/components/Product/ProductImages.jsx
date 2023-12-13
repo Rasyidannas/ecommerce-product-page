@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProductImages({ bigImg, thumbImg }) {
+function ProductImages({ bigImg, thumbImg, onCloseModal }) {
   const [showProduct, setShowProduct] = useState(0);
 
   //handler show product
@@ -9,18 +9,24 @@ function ProductImages({ bigImg, thumbImg }) {
     console.log(showProduct);
   };
 
+  //handler close btn
+  const closeHandler = () => {
+    //this is store on props parent
+    onCloseModal(true);
+  };
+
   //style for thumbnail
   const activeThumbBox = "border-2 border-orange";
   const activeThumbImg = "opacity-50";
 
   return (
     <>
-      <div className="w-full overflow-hidden rounded-xl">
-        <img src={bigImg[showProduct]} />
+      <div className="w-full overflow-hidden rounded-xl cursor-pointer">
+        <img src={bigImg[showProduct]} onClick={closeHandler} />
       </div>
       <ul className="flex gap-4">
         <li
-          className={`overflow-hidden rounded-md ${
+          className={`overflow-hidden rounded-md cursor-pointer ${
             showProduct === 0 && activeThumbBox
           }`}
           onClick={showProductHandler.bind(null, 0)}
@@ -34,7 +40,7 @@ function ProductImages({ bigImg, thumbImg }) {
           />
         </li>
         <li
-          className={`overflow-hidden rounded-md ${
+          className={`overflow-hidden rounded-md cursor-pointer ${
             showProduct === 1 && activeThumbBox
           }`}
           onClick={showProductHandler.bind(null, 1)}
@@ -48,7 +54,7 @@ function ProductImages({ bigImg, thumbImg }) {
           />
         </li>
         <li
-          className={`overflow-hidden rounded-md ${
+          className={`overflow-hidden rounded-md cursor-pointer ${
             showProduct === 2 && activeThumbBox
           }`}
           onClick={showProductHandler.bind(null, 2)}
@@ -62,7 +68,7 @@ function ProductImages({ bigImg, thumbImg }) {
           />
         </li>
         <li
-          className={`overflow-hidden rounded-md ${
+          className={`overflow-hidden rounded-md cursor-pointer ${
             showProduct === 3 && activeThumbBox
           }`}
           onClick={showProductHandler.bind(null, 3)}
